@@ -1,4 +1,4 @@
-module github.com/KeepSec-Technologies/Archon
+module github.com/JCoupalK/Archon
 
 go 1.22.0
 
