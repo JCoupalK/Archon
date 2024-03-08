@@ -22,5 +22,4 @@ jobs:
         go-version: '1.22'
 
     - name: Build
-      run: go mod download
       run: go build -v ./...
