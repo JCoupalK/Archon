@@ -1,5 +1,4 @@
 .env
-*.sql
 *.exe
 test/
 build/
