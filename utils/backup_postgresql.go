@@ -6,7 +6,7 @@ import (
 	"path/filepath"
 	"time"
 
-	"github.com/JCoupalK/go-pgdump" // Ensure this path matches your library's import path
+	"github.com/JCoupalK/go-pgdump"
 )
 
 func BackupPostgreSQL(username, password, hostname, dbname, outputDir string, port int) {
@@ -14,9 +14,11 @@ func BackupPostgreSQL(username, password, hostname, dbname, outputDir string, po
 	psqlInfo := fmt.Sprintf("host=%s port=%d user=%s password=%s dbname=%s sslmode=disable",
 		hostname, port, username, password, dbname)
 
-	// Prepare filename for the unified dump
 	currentTime := time.Now()
-	dumpFilename := filepath.Join(outputDir, fmt.Sprintf("%s-%s.sql", dbname, currentTime.Format("20060102T150405")))
+	dumpFilename := filepath.Join(
+		outputDir,
+		fmt.Sprintf("%s-%s.sql", dbname, currentTime.Format("20060102T150405")),
+	)
 
 	// Create a new dumper instance
 	dumper := pgdump.NewDumper(psqlInfo)
